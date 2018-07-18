@@ -10,7 +10,9 @@ nav > button{
 	
 	margin-left:20px;
 	align: inline;
-	width: 3rem;
+	width: 5rem;
+	height: 5rem;
+	border-radius:25px;
 }
 .quoteContainer{
 	font-family: 'Merienda', cursive;}
