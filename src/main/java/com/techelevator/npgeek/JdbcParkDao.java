@@ -105,12 +105,7 @@ public class JdbcParkDao implements ParkDao{
 	@Override
 	public List<Park> getFavorites() {
 		List<Park> favoriteParks = new ArrayList();
-		String selectTopFive = "SELECT park.*\n" + 
-				"FROM park\n" + 
-				"JOIN survey_result\n" + 
-				"ON park.parkCode = survey_result.parkCode\n" + 
-				"GROUP BY park.parkCode\n" + 
-				"ORDER BY count(survey_result.parkCode) desc limit 5;";
+		String selectTopFive = "SELECT * FROM park WHERE parkCode = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(selectTopFive);
 		while (results.next()) {
 			Park park = new Park();
