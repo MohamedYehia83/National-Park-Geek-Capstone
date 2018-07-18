@@ -51,10 +51,11 @@ public class JdbcParkDao implements ParkDao{
 	@Override
 	public Park getSelectedPark(String parkCode) {
 		Park selectedPark = new Park();
+		parkCode = parkCode.toUpperCase();
 		String getPark = "SELECT * FROM park WHERE parkCode = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(getPark, parkCode);
 		while (results.next()) {
-			selectedPark.setParkCode(results.getString("parkcode"));
+			selectedPark.setParkCode(results.getString("parkcode").toLowerCase());
 			selectedPark.setParkName(results.getString("parkname"));
 			selectedPark.setState(results.getString("state"));
 			selectedPark.setAcreage(results.getInt("acreage"));
