@@ -2,5 +2,15 @@
 	margin:0;
 	padding:0;
 	width:100%;
+	
 }
 
+
+nav > button{
+	
+	margin-left:20px;
+	align: inline;
+	width: 3rem;
+}
+.quoteContainer{
+	font-family: 'Merienda', cursive;}

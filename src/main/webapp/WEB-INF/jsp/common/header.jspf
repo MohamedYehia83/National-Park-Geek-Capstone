@@ -3,7 +3,10 @@
 <html>
 <head>
 	<title>
+	Geeks have more fun.
 	</title>
+	<link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+	
 	<c:url var="stylesheetHref" value="/css/style.css" />
 	<link rel="stylesheet" href="${stylesheetHref}">
 </head>
@@ -13,15 +16,13 @@
 		<img src="${logoImgSrc}" alt="Geek">
 	</header>
 	<nav>
-		<ul>
 			<c:url var="home" value="/" />
-			<li><a href="${home}">Home</a></li>
+			<button><a href="${home}">Home</a></button>
 			
 			<c:url var="survey" value="/survey" />
-			<li><a href="${survey}">Rate a park</a></li>
+			<button><a href="${survey}">Rate a park</a></button>
 			
 			<c:url var="favorite" value="/favorite" />
-			<li><a href="${favorite}">Top Rated Parks</a></li>
-		</ul>
+			<button><a href="${favorite}">Top Rated Parks</a></button>	
 	</nav>
 	<br>
