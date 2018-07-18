@@ -24,12 +24,12 @@ public class ParkController {
 	}
 	
 	@RequestMapping(path="/favorite", method=RequestMethod.GET)
-	public String FavoritePage() {
+	public String FavoritePage(ModelMap modelHolder) {
 		return "favorite";
 	}
 	
 	@RequestMapping(path="/survey", method=RequestMethod.GET)
-	public String SurveryPage() {
+	public String SurveryPage(ModelMap modelHolder) {
 		return "survery";
 	}
 }

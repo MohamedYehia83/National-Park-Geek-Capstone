@@ -49,7 +49,6 @@ public class JdbcParkDao implements ParkDao{
 
 	@Override
 	public Park getSelectedPark() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
