@@ -8,7 +8,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.techelevator.model.Review;
 
 @Controller
 public class ParkController {
@@ -40,7 +39,7 @@ public class ParkController {
 	@RequestMapping(path="/survey", method=RequestMethod.GET)
 	public String SurveryPage(ModelMap modelHolder) {
 		if(! modelHolder.containsAttribute("survey")){
-			modelHolder.put("survey", new survey());
+			//modelHolder.put("survey", new survey());
 		}
 		return "survey";
 	}
