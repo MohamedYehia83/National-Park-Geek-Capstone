@@ -10,9 +10,6 @@
 		<c:url var="parkImgUrl" value="/img/parks/${park.parkCode}.jpg" />
 		<c:url var="detailUrl" value="/details?parkCode=${park.parkCode}" />
 		<a href="${detailUrl}"> <img src="${parkImgUrl }" /></a>
-
-
-
 		<div class="descript">
 			<c:out value=" ${park.parkDescription }" />
 		</div>
