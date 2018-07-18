@@ -102,6 +102,38 @@ public class JdbcParkDao implements ParkDao{
 		return parkWeather;
 	}	
 	
+	@Override
+	public List<Park> getFavorites() {
+		List<Park> favoriteParks = new ArrayList();
+		String selectTopFive = "SELECT park.*\n" + 
+				"FROM park\n" + 
+				"JOIN survey_result\n" + 
+				"ON park.parkCode = survey_result.parkCode\n" + 
+				"GROUP BY park.parkCode\n" + 
+				"ORDER BY count(survey_result.parkCode) desc limit 5;";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(selectTopFive);
+		while (results.next()) {
+			Park park = new Park();
+			park.setParkCode(results.getString("parkcode").toLowerCase());
+			park.setParkName(results.getString("parkname"));
+			park.setState(results.getString("state"));
+			park.setAcreage(results.getInt("acreage"));
+			park.setElevationInFeet(results.getInt("elevationinfeet"));
+			park.setMilesOfTrail(results.getFloat("milesoftrail"));
+			park.setNumberOfCampsites(results.getInt("numberofcampsites"));
+			park.setClimate(results.getString("climate"));
+			park.setYearFounded(results.getInt("yearfounded"));
+			park.setAnnualVisitorCount(results.getInt("annualvisitorcount"));
+			park.setInspirationalQuote(results.getString("inspirationalquote"));
+			park.setInspirationalQuoteSource(results.getString("inspirationalquotesource"));
+			park.setParkDescription(results.getString("parkdescription"));
+			park.setEntryFee(results.getInt("entryfee"));
+			park.setNumberOfAnimalSpecies(results.getString("numberofanimalspecies"));
+			favoriteParks.add(park);
+		}
+		return favoriteParks;
+	}
+	
 
 }
 

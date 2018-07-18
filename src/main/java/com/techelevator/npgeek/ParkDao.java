@@ -11,6 +11,8 @@ public interface ParkDao {
 	public void saveInput(Survey survey);
 
 	public List<Weather> getWeather(String parkCode);
+
+	public List<Park> getFavorites();
 		
 	
 }
