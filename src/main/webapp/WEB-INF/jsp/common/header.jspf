@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="${stylesheetHref}">
 </head>
 <body>
-	<header>
+	<header class= >
 		<c:url var="logoImgSrc" value="/img/logo.png" />
 		<img src="${logoImgSrc}" alt="Geek">
 	</header>
