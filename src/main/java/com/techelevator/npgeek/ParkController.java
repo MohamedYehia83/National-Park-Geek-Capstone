@@ -1,5 +1,7 @@
 package com.techelevator.npgeek;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -36,20 +38,5 @@ public class ParkController {
 		return "favorite";
 	}
 	
-	@RequestMapping(path="/survey", method=RequestMethod.GET)
-	public String SurveryPage(ModelMap modelHolder) {
-		
-		return "survey";
-	}
 	
-	@RequestMapping(path="/survey", method=RequestMethod.POST)
-	public String addSurvey(@RequestParam String parkCode, @RequestParam String emailAddress, @RequestParam String state, @RequestParam String activityLevel) {
-		Survey surveyToSave = new Survey();
-		surveyToSave.setParkCode(parkCode);
-		surveyToSave.setEmailAddress(emailAddress);
-		surveyToSave.setState(state);
-		surveyToSave.setActivityLevel(activityLevel);
-		parkDao.saveInput(surveyToSave);
-		return "redirect:/";
-	}
 }

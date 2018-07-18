@@ -21,46 +21,45 @@
 	
 	
 	<c:url var="newSurveyUrl" value="/newSurvey"/>
-	<form:form method="POST" action="${newSurveyUrl }" modelAttribute="survey">
+	<form method="POST" action="${newSurveyUrl }" modelAttribute="survey">
 		
 		
 	<h2><strong>Fill A Survey</strong></h2>	
 		
 	<div>
-		<form:label path="Favorite National Park">Favorite National Park</form:label>
-		<select>
+		<form:label for="Favorite National Park">Favorite National Park</form:label>
+		<select name="park" id="park">
 			<c:forEach var="park" items="${parks}">
-			<option><c:url var="aboutParkUrl" value="/park?parkCode=${park.parkCode}" />
-			<a href="${aboutParkUrl}"> <c:out value=" ${park.parkName }" /></a></option>
+			<option value="${park.parkName}"> ${park.parkName }</option>
 		</c:forEach>
-		
 		</select>
 		
 	</div><br>
 		
 		<div>
+		
+		
 		<form:label path="Your email">Your email</form:label>
-		<form:input path="email" placeholder="Your email"/>
-		<form:errors path="email" cssClass="email"/>
+		
+		<input type="text" name="mail"><br>
+	
 		
 	</div><br>
 	
 	<div>
-		<form:label path="State Of residence">State Of residence</form:label>
-		<select>
+		<form:label for="State Of residence">State Of residence</form:label>
+		<select name="park" id="park">
 			<c:forEach var="park" items="${parks}">
-			<option><c:url var="aboutParkUrl" value="/park?parkCode=${park.parkCode}" />
-			<a href="${aboutParkUrl}"> <c:out value=" ${park.parkName }" /></a></option>
+			<option value="${park.state}"> ${park.state}</option>
 		</c:forEach>
 		</select>
 	</div><br>
 
 	<div>
-		<form:label path="Activity level"> Activity level </form:label>
-		<select>
-			<c:forEach var="park" items="${parks}">
-			<option><c:url var="aboutParkUrl" value="/park?parkCode=${park.parkCode}" />
-			<a href="${aboutParkUrl}"> <c:out value=" ${park.parkName }" /></a></option>
+		<form:label for="Activity level"> Activity level </form:label>
+		<select name="park" id="park">
+			<c:forEach var="survey_result" items="${survey_result}">
+			<option value="${survey_result.activityLevel}">${survey_result.activityLevel}</option>
 		</c:forEach>
 		</select>
 	</div><br>
@@ -69,7 +68,7 @@
 	<div>
 		<input style="color: white; background-color: blue;" type="submit" value="Submit"/>
 	</div>
-	</form:form>
+	</form>
 </section>
 </body>
 
