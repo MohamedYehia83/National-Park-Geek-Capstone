@@ -26,7 +26,7 @@ public class ParkController {
 	@RequestMapping(path="/details", method=RequestMethod.GET)
 	public String DetailPage(String parkCode, ModelMap modelHolder) {
 		Park parks = parkDao.getSelectedPark(parkCode);
-		modelHolder.put("parks", parks);
+		modelHolder.put("park", parks);
 
 		return "details";
 	}
