@@ -30,6 +30,6 @@ public class ParkController {
 	
 	@RequestMapping(path="/survey", method=RequestMethod.GET)
 	public String SurveryPage(ModelMap modelHolder) {
-		return "survery";
+		return "survey";
 	}
 }
