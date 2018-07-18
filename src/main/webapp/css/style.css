@@ -1,18 +1,26 @@
 *{
-	margin:0;
-	padding:0;
-	width:100%;
+width:100%;
+}
+.headercontainer{
+	background-image: url("https://steemitimages.com/0x0/http://www.numaniaticos.com/wp-content/uploads/2014/11/cascada2.gif");
+	border-radius:100px;
+	
+
+}
+nav {
 	
 }
 
 
-nav > button{
-	
+nav > a{
+	font-family: 6px 'Chela One', cursive;
 	margin-left:20px;
-	align: inline;
-	width: 5rem;
+ 	width: 5rem;
 	height: 5rem;
+	border: 5px groove grey;
+	background: lightgrey;
 	border-radius:25px;
 }
 .quoteContainer{
-	font-family: 'Merienda', cursive;}
+	font-family: 'Merienda', cursive;
+	}
