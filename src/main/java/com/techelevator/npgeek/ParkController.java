@@ -16,6 +16,20 @@ public class ParkController {
 	public String HomePage(ModelMap modelHolder) {
 		modelHolder.put("parks", parkDao.getAllParks());
 		return "home";
-		
+	}
+	
+	@RequestMapping(path="/details", method=RequestMethod.GET)
+	public String DetailPage(ModelMap modelHolder) {
+		return "details";
+	}
+	
+	@RequestMapping(path="/favorite", method=RequestMethod.GET)
+	public String FavoritePage() {
+		return "favorite";
+	}
+	
+	@RequestMapping(path="/survey", method=RequestMethod.GET)
+	public String SurveryPage() {
+		return "survery";
 	}
 }
