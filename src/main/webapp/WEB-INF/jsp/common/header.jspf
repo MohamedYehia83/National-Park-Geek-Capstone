@@ -11,7 +11,7 @@
 <body>
 	<header>
 		<c:url var="logoImgSrc" value="/img/logo.png" />
-		<img src="${logoImgSrc}" alt="Fly By Night Bank">
+		<img src="${logoImgSrc}" alt="Geek">
 	</header>
 	<nav>
 		<ul>
