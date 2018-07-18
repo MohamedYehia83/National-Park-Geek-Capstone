@@ -1,10 +1,14 @@
 package com.techelevator.npgeek;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.techelevator.model.Review;
 
 @Controller
 public class ParkController {
@@ -18,8 +22,13 @@ public class ParkController {
 		return "home";
 	}
 	
+	
+	
 	@RequestMapping(path="/details", method=RequestMethod.GET)
-	public String DetailPage(ModelMap modelHolder) {
+	public String DetailPage(String parkCode, ModelMap modelHolder) {
+		Park parks = parkDao.getSelectedPark(parkCode);
+		modelHolder.put("parks", parks);
+
 		return "details";
 	}
 	
@@ -30,6 +39,9 @@ public class ParkController {
 	
 	@RequestMapping(path="/survey", method=RequestMethod.GET)
 	public String SurveryPage(ModelMap modelHolder) {
+		if(! modelHolder.containsAttribute("survey")){
+			modelHolder.put("survey", new survey());
+		}
 		return "survey";
 	}
 }

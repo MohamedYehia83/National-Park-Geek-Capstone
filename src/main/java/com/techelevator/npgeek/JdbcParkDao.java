@@ -27,7 +27,8 @@ public class JdbcParkDao implements ParkDao{
 		SqlRowSet results = jdbcTemplate.queryForRowSet(selectAllParks);
 		while (results.next()) {
 			Park park = new Park();
-			park.setParkCode(results.getString("parkcode"));
+			park.setParkCode(results.getString("parkcode").toLowerCase());
+
 			park.setParkName(results.getString("parkname"));
 			park.setState(results.getString("state"));
 			park.setAcreage(results.getInt("acreage"));
@@ -48,8 +49,28 @@ public class JdbcParkDao implements ParkDao{
 	}
 
 	@Override
-	public Park getSelectedPark() {
-		return null;
+	public Park getSelectedPark(String parkCode) {
+		Park selectedPark = new Park();
+		String getPark = "SELECT * FROM park WHERE parkCode = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(getPark, parkCode);
+		while (results.next()) {
+			selectedPark.setParkCode(results.getString("parkcode"));
+			selectedPark.setParkName(results.getString("parkname"));
+			selectedPark.setState(results.getString("state"));
+			selectedPark.setAcreage(results.getInt("acreage"));
+			selectedPark.setElevationInFeet(results.getInt("elevationinfeet"));
+			selectedPark.setMilesOfTrail(results.getFloat("milesoftrail"));
+			selectedPark.setNumberOfCampsites(results.getInt("numberofcampsites"));
+			selectedPark.setClimate(results.getString("climate"));
+			selectedPark.setYearFounded(results.getInt("yearfounded"));
+			selectedPark.setAnnualVisitorCount(results.getInt("annualvisitorcount"));
+			selectedPark.setInspirationalQuote(results.getString("inspirationalquote"));
+			selectedPark.setInspirationalQuoteSource(results.getString("inspirationalquotesource"));
+			selectedPark.setParkDescription(results.getString("parkdescription"));
+			selectedPark.setEntryFee(results.getInt("entryfee"));
+			selectedPark.setNumberOfAnimalSpecies(results.getString("numberofanimalspecies"));
+		}
+		return selectedPark;
 	}
 
 	@Override
