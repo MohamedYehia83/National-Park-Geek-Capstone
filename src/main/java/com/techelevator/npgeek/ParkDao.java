@@ -6,7 +6,7 @@ public interface ParkDao {
 
 	public List<Park> getAllParks();
 	
-	public Park getSellectedPark() ;
+	public Park getSelectedPark();
 	
 	public void saveInput();
 		

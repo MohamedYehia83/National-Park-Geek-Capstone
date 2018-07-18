@@ -11,7 +11,7 @@ public class ParkController {
 	@Autowired
 	private ParkDao parkDao;
 	
-	@RequestMapping(path= {"/"}, method=RequestMethod.GET)
+	@RequestMapping(path= "/", method=RequestMethod.GET)
 	public String HomePage() {
 		
 		return "home";
