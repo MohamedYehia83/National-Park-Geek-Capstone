@@ -8,7 +8,7 @@ public interface ParkDao {
 	
 	public Park getSelectedPark(String parkCode);
 	
-	public void saveInput();
+	public void saveInput(Survey survey);
 		
 	
 }
