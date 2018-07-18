@@ -1,7 +1,7 @@
 *{
-	margin:0;
-	padding:0;
-	width:100%;
+/* 	margin:0;
+	padding:0; */
+	width:98%;
 }
 .headercontainer{
 	background-image: url("https://steemitimages.com/0x0/http://www.numaniaticos.com/wp-content/uploads/2014/11/cascada2.gif");
@@ -15,8 +15,7 @@ nav {
 	border: 5px groove grey;
 	background: lightgrey;
 	border-radius:25px;
-	padding:7px;
-	align:center;
+	width:40%;
 	
 }
 
@@ -26,6 +25,42 @@ nav > a{
 	margin-left:20px;
  	
 }
+.detailpageContainer{
+
+}
+
+
+.detailImg{
+	width:75%;
+	
+}
+
+
 .quoteContainer{
 	font-family: 'Merienda', cursive;
+	width:75%;
+	
 	}
+	
+.parkInfoContainer{
+	display:grid;
+	grid-template-columns: repeat(8, 1fr) ;
+	grid-template-rows:1fr 1fr;
+	padding: .5rem;
+	margin:.5rem;
+	}
+	
+}
+.parkInfoContainer > span{
+		padding: 1%;
+		width: 75%;
+}
+
+.parkInfoContainer > span:nth-child(odd){
+		
+		
+	
+}
+	
+	
+	
