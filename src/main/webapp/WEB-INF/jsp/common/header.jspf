@@ -16,7 +16,11 @@
 		<ul>
 			<c:url var="home" value="/" />
 			<li><a href="${home}">Home</a></li>
-			<li><a href="#">Survey</a></li>
-			<li><a href="#">Top Rated Parks</a></li>
+			
+			<c:url var="survey" value="/survey" />
+			<li><a href="${survey}">Rate a park</a></li>
+			
+			<c:url var="favorite" value="/favorite" />
+			<li><a href="${favorite}">Top Rated Parks</a></li>
 		</ul>
 	</nav>
