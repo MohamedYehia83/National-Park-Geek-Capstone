@@ -3,7 +3,6 @@
 <html>
 <head>
 	<title>
-	  	<c:if test="${param.subTitle != null}"> - <c:out value="${param.subTitle}"/></c:if>
 	</title>
 	<c:url var="stylesheetHref" value="/css/style.css" />
 	<link rel="stylesheet" href="${stylesheetHref}">
@@ -15,8 +14,8 @@
 	</header>
 	<nav>
 		<ul>
-			<c:url var="homePageHref" value="/" />
-			<li><a href="${homePageHref}">Home</a></li>
+			<c:url var="home" value="/" />
+			<li><a href="${home}">Home</a></li>
 			<li><a href="#">Survey</a></li>
 			<li><a href="#">Top Rated Parks</a></li>
 		</ul>
