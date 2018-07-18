@@ -1,24 +1,24 @@
 <%@include file="common/header.jspf"%>
 <div class="detailContainer">
-	<div class="parkInfo">
 		<div class="detailImg">
 			<c:url var="parkImgUrl" value="/img/parks/${park.parkCode}.jpg" />
 			<img src="${parkImgUrl}" />
 		</div>
-		<div class="parkDetailContainer">
-			<h3>
-				<c:out value="State: " />
-				<c:out value="${parks.state}" />
-			</h3>
-			<h2>
-				<c:out value="${parks.parkName}" />
-				<span class="foundedYear"><c:out value=" Park Founded: ${park.yearFounded}" /></span>
-			</h2>
-			
-			<h6>
+		<div class ="quote">
 				<c:out
-					value="'${parks.inspirationalQuote}' - ${park.inspirationalQuoteSource}" />
-			</h6>
+					value="'${park.inspirationalQuote}' from ${park.inspirationalQuoteSource}" />
+			</div>
+		<div class="parkDetailContainer">
+			<h4>
+				<c:out value="${park.parkName}" />
+				<span class="foundedYear"><c:out value=" Park Founded: ${park.yearFounded}" /></span>
+			</h4>
+			<h3>
+				<c:out value=" in  " />
+				<c:out value="${park.state}" />
+			</h3>
+			
+			
 			<br>
 			<table class="parkInfo">
 				<tr>
@@ -33,27 +33,24 @@
 					
 				</tr>
 				<tr>
-					<td><c:out value="${parks.acreage}" /></td>
-					<td><c:out value="${parks.elevationInFeet}" /></td>
-					<td><c:out value="${parks.climate}" /></td>
-					<td><c:out value="${parks.numberOfAnimalSpecies}" /></td>
+					<td><c:out value="${park.acreage}" /></td>
+					<td><c:out value="${park.elevationInFeet}" /></td>
+					<td><c:out value="${park.climate}" /></td>
+					<td><c:out value="${park.numberOfAnimalSpecies}" /></td>
 					<td><c:out value="${parks.milesOfTrail}" /></td>
 					<td><c:out value="${parks.annualVisitorCount}" /></td>					
 					<td><c:out value="${parks.numberOfCampsites}" /></td>
 					<td><c:out value="${parks.entryFee}" /></td>
-					
 				</tr>
 
 			</table>
 			<h2>
-				<c:out value="About ${parks.parkName }:" />
+				<c:out value="More about ${parks.parkName }:" />
 			</h2>
 			<p>
 				<c:out value="${parks.parkDescription}" />
 			</p>
 		</div>
-	</div>
-	<div class="weatherDiv"></div>
 </div>
 
 
