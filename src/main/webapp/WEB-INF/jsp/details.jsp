@@ -1,5 +1,5 @@
 <%@include file="common/header.jspf"%>
-<div class="detailpageContainer">
+<body class="detailpageContainer">
 	<div class="detailImg">
 		<c:url var="parkImgUrl" value="/img/parks/${park.parkCode}.jpg" />
 		<img src="${parkImgUrl}" />
@@ -12,8 +12,8 @@
 	</div>
 		<div>
 			<c:out value="${park.parkName}" />
-			<span class="foundedYear"><c:out
-					value=" was founded in ${park.yearFounded} in ${park.state}." /></span>
+			<span class="foundedYear">
+			<c:out value=" was founded in ${park.yearFounded} in ${park.state}." /></span>
 		</div>
 
 		<br>
@@ -37,10 +37,8 @@
 				<span><c:out value="$ ${park.entryFee}.00" /></span>
 			
 		</div>
-		<h2>
-			<c:out value="More about ${park.parkName }:" />
-		</h2>
 		<div>
+			<c:out value="More about ${park.parkName }:" />
 			<c:out value="${park.parkDescription}" />
 		</div>
 		<div class="weathercontainer">
@@ -50,7 +48,7 @@
 					<c:out value="${weather.}" />
  --%>
 	</div>
-</div>
+</body>
 
 
 
