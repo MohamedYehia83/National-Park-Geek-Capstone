@@ -1,8 +1,9 @@
 *{
-/* 	margin:0;
+ 	margin:auto;
 	padding:0; */
 	width:98%;
 }
+/* Header Styles */
 .headercontainer{
 	background-image: url('../img/waterfall.gif');
 	background-size: 100%;
@@ -27,17 +28,22 @@
 .linkbar > a{
 	    color: #804000;
     cursor: pointer;
-    text-decoration: none;
-	
-}
+    text-decoration: none;}
+ 
+/* Home Page Style */
+ 
+ /*  display: inline;
+{ */
 
+/* Detail Page Style */
 .detailpageContainer{
-
+		background: tan;
+	
 }
 
 
 .detailImg{
-	width:75%;
+	width:95%;
 	
 }
 
@@ -64,9 +70,15 @@
 
 .parkInfoContainer > span:nth-child(odd){
 		
-		
 	
 }
+.weathercontainer{
+	background: -moz-linear-gradient(left, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 37%, rgba(125,185,232,1) 51%, rgba(125,185,232,1) 51%, rgba(32,124,202,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 37%,rgba(125,185,232,1) 51%,rgba(125,185,232,1) 51%,rgba(32,124,202,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 37%,rgba(125,185,232,1) 51%,rgba(125,185,232,1) 51%,rgba(32,124,202,1) 100%);
+}
+
+/* Survey Page Style */
 	
 	
 	

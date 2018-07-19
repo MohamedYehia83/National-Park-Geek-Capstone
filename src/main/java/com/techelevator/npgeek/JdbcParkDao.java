@@ -81,11 +81,12 @@ public class JdbcParkDao implements ParkDao{
 	@Override
 	public List<Weather> getWeather(String parkCode) {
 		List<Weather> parkWeather = new ArrayList();
+		parkCode = parkCode.toUpperCase();
 		String selectAllWeather = "SELECT * FROM weather WHERE parkCode = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(selectAllWeather, parkCode);
 		while (results.next()) {
-			Weather weather = new Weather();
-			weather.setParkCode(results.getString("parkcode").toLowerCase());
+			Weather weather = new Weather();			
+			weather.setParkCode(results.getString("parkcode").toUpperCase());
 			weather.setFiveDayForecastValue(results.getInt("fivedayforecastvalue"));
 			weather.setLow(results.getInt("low"));
 			weather.setHigh(results.getInt("high"));
@@ -98,7 +99,12 @@ public class JdbcParkDao implements ParkDao{
 	@Override
 	public List<Park> getFavorites() {
 		List<Park> favoriteParks = new ArrayList();
-		String selectTopFive = "SELECT * FROM park WHERE parkCode = ?";
+		String selectTopFive = "SELECT park.*\n" + 
+				"FROM park\n" + 
+				"JOIN survey_result\n" + 
+				"ON park.parkCode = survey_result.parkCode\n" + 
+				"GROUP BY park.parkCode\n" + 
+				"ORDER BY count(survey_result.parkCode) desc limit 5";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(selectTopFive);
 		while (results.next()) {
 			Park park = new Park();

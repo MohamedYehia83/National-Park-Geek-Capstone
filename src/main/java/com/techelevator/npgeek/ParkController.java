@@ -28,13 +28,14 @@ public class ParkController {
 	public String DetailPage(String parkCode, ModelMap modelHolder) {
 		Park parks = parkDao.getSelectedPark(parkCode);
 		modelHolder.put("park", parks);
-		modelHolder.put("weather", parkDao.getWeather(parkCode));
+		modelHolder.addAttribute("weather", parkDao.getWeather(parkCode));
 		return "details";
 	}
 	
+	
 	@RequestMapping(path="/favorite", method=RequestMethod.GET)
-	public String FavoritePage(ModelMap modelHolder) {
-		modelHolder.put("favs", parkDao.getFavorites());
+	public String FavoritePage(ModelMap modelHolderF) {
+		modelHolderF.put("favs", parkDao.getFavorites());
 		return "favorite";
 	}
 	
