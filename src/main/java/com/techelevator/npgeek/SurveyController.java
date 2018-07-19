@@ -21,7 +21,7 @@ public class SurveyController {
 		modelHolder.put("survey", survey);
 		return "survey";
 	}
-	
+	/*
 	@RequestMapping(path="/survey", method=RequestMethod.POST)
 	public String addSurvey(@RequestParam String parkCode, @RequestParam String emailAddress, @RequestParam String state, @RequestParam String activityLevel) {
 		Survey surveyToSave = new Survey();
@@ -32,4 +32,5 @@ public class SurveyController {
 		surveyDao.saveInput(surveyToSave);
 		return "redirect:/";
 	}
+	*/
 }
