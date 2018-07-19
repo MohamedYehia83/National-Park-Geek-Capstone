@@ -76,14 +76,7 @@ public class JdbcParkDao implements ParkDao{
 
 	
 	
-	@Override
-	public void saveInput(Survey survey) {
-		
-		String sqlInsertSurvey = "INSERT INTO survey(parkcode, emailaddress, state, activitylevel) VALUES (?,?,?,?) RETURNING surveyid";
-		String surveyId = jdbcTemplate.queryForObject(sqlInsertSurvey, String.class, survey.getParkCode(), survey.getEmailAddress(), survey.getState(), survey.getActivityLevel());
-		int surveyIdInt = Integer.parseInt(surveyId);
-		survey.setSurveyId(surveyIdInt);
-	}
+	
 
 	@Override
 	public List<Weather> getWeather(String parkCode) {
