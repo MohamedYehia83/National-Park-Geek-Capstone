@@ -41,6 +41,11 @@
 			<c:out value="${park.parkDescription}" />
 		</div>
 		<div class="weathercontainer">
+			<c:out value = "Day${dayOne.fiveDayForecastValue }"/>
+			<c:out value = "High: ${dayOne.high }F"/>
+			<c:out value = "Low: ${dayOne.low }F"/>
+			<c:url var = "weatherURL" value = "/img/weather/${dayOne.forecast }.png"/>
+			<img src="${weatherURL }"/>
 			<c:forEach var = "day" items="${weather}">
 			<c:out value = "Day${day.fiveDayForecastValue }"/>
 			<c:out value = "High: ${day.high }F"/>
