@@ -84,3 +84,30 @@ background: linear-gradient(to right, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 37
 
 }
 /* Survey Page Style */
+
+/* Favorites Page Style */
+.favoriteContainer {
+	display: flex;
+	flex-direction: column;
+}
+.favoritePark {
+	display: flex;
+}
+.favParkImg {
+	margin: 10px;
+	margin-bottom: 30px;
+	display: flex;
+	width: 40%;
+	height: 200px;
+}
+.favParkName {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 40px;
+}
+
+
+
+
+
