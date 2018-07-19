@@ -50,14 +50,14 @@
 		<form:label for="State Of residence">State Of residence</form:label>
 		<select name="park" id="park">
 			<c:forEach var="park" items="${parks}">
-			<option value="${park.state}"> ${park.state}</option>
+			<option value="${park.state}"> ${park}</option>
 		</c:forEach>
 		</select>
 	</div><br>
 
 	<div>
 		<form:label for="Activity level"> Activity level </form:label>
-		<select name="park" id="park">
+		<select name="survey_result" id="survey_result">
 			<c:forEach var="survey_result" items="${survey_result}">
 			<option value="${survey_result.activityLevel}">${survey_result.activityLevel}</option>
 		</c:forEach>
