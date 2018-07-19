@@ -37,6 +37,7 @@ public class ParkController {
 	@RequestMapping(path="/favorite", method=RequestMethod.GET)
 	public String FavoritePage(ModelMap modelHolderF) {
 		modelHolderF.put("favs", parkDao.getFavorites());
+		modelHolderF.put("count", parkDao.getCounts());
 		return "favorite";
 	}
 	

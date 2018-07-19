@@ -13,5 +13,7 @@ public interface ParkDao {
 	public List<Weather> getWeather(String parkCode);
 
 	public List<Park> getFavorites();
+
+	public List<Integer> getCounts();
 	
 }

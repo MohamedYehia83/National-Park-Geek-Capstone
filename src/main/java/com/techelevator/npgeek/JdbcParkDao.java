@@ -143,6 +143,18 @@ public class JdbcParkDao implements ParkDao{
 		return favoriteParks;
 	}
 
+	@Override
+	public List<Integer> getCounts() {
+		List<Integer> voteCounts = new ArrayList();
+		String topFiveVoteCount = "SELECT count(park.parkCode) FROM park JOIN survey_result ON park.parkCode = survey_result.parkCode GROUP BY park.parkCode ORDER BY count(survey_result.parkCode) desc Limit 5"; 
+		SqlRowSet results = jdbcTemplate.queryForRowSet(topFiveVoteCount);
+		while (results.next()) {
+			int holder = results.getInt("count");
+			voteCounts.add(holder);
+		}
+		return voteCounts;
+	}
+
 	
 
 }

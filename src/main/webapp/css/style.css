@@ -86,7 +86,25 @@ background: linear-gradient(to right, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 37
 /* Survey Page Style */
 
 /* Favorites Page Style */
+.topLine {
+	display: flex;
+	justify-content: center;
+}
+.favoriteTitle {
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	padding: 10px;
+	font-size: 60px;
+	color: red;
+	border: 2px solid black;
+	border-radius: 20px;
+	width: 750px;
+}
 .favoriteContainer {
+	display: flex;	
+}
+.favParks {
 	display: flex;
 	flex-direction: column;
 }
@@ -104,6 +122,15 @@ background: linear-gradient(to right, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 37
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	font-size: 40px;
+}
+.voteCounts {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 250px;
+}
+.parkVote {
 	font-size: 40px;
 }
 
