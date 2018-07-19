@@ -8,6 +8,7 @@ public interface ParkDao {
 	
 	public Park getSelectedPark(String parkCode);
 	
+	public Weather getDayOneWeather(String parkCode);
 
 	public List<Weather> getWeather(String parkCode);
 

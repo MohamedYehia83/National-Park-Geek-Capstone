@@ -29,6 +29,7 @@ public class ParkController {
 		Park parks = parkDao.getSelectedPark(parkCode);
 		modelHolder.put("park", parks);
 		modelHolder.addAttribute("weather", parkDao.getWeather(parkCode));
+		modelHolder.addAttribute("dayOne", parkDao.getDayOneWeather(parkCode));
 		return "details";
 	}
 	

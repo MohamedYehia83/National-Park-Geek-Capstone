@@ -25,14 +25,18 @@
 	
 	
 	<c:url var="newSurveyUrl" value="/survey"/>
-	<form method="POST" action="${newSurveyUrl }" modelAttribute="survey">
+	<form:form method="POST" action="${newSurveyUrl }" modelAttribute="survey">
 		
 		
 	<h2><strong>Fill A Survey</strong></h2>	
 		
 	<div>
+
 		<form:label path="Favorite National Park">Favorite National Park</form:label>
 		<select name="park" id="park">
+
+		<form:label for="Favorite National Park">Favorite National Park</form:label>
+		<select name="parkCode" id="parkCode">
 			<c:forEach var="park" items="${parks}">
 			<option value="${park.parkCode}"> ${park.parkName }</option>
 		</c:forEach>
@@ -47,6 +51,8 @@
 		<form:input path="Your email"/>
 		<form:errors path="Your email" cssClass="error"/>
 		<input type="text" name="mail"><br>
+		
+		<input type="text" name="emailAddress"><br>
 	
 		
 	</div><br>
@@ -60,6 +66,8 @@
 		</c:forEach>
 
 	<option value="AL">Alabama</option>
+		<select name="state" id="state">
+			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
 			<option value="AZ">Arizona</option>
 			<option value="AR">Arkansas</option>
@@ -115,7 +123,7 @@
 
 	<div>
 		<form:label for="Activity level"> Activity level </form:label>
-		<select name="survey_result" id="survey_result">
+		<select name="activityLevel" id="activityLevel">
 			<option value="Inactive">Inactive</option>
 			<option value="Sedentary">Sedentary</option>
 			<option value="Active">Active</option>
@@ -127,7 +135,7 @@
 	<div>
 		<input style="color: white; background-color: blue;" type="submit" value="Submit"/>
 	</div>
-	</form>
+	</form:form>
 </section>
 </body>
 

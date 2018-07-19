@@ -75,14 +75,29 @@ public class JdbcParkDao implements ParkDao{
 	}
 
 	
-	
+
+	@Override
+	public Weather getDayOneWeather(String parkCode) {
+		Weather dayOne = new Weather();
+		parkCode = parkCode.toUpperCase();
+		String selectDayOneWeather = "SELECT * FROM weather WHERE parkCode = ? AND fiveDayForecastValue = 1";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(selectDayOneWeather, parkCode);
+		while (results.next()) {
+			dayOne.setParkCode(results.getString("parkcode"));
+			dayOne.setFiveDayForecastValue(results.getInt("fiveDayForecastValue"));
+			dayOne.setLow(results.getInt("low"));
+			dayOne.setHigh(results.getInt("high"));
+			dayOne.setForecast(results.getString("forecast"));
+		}
+		return dayOne;
+	}
 	
 
 	@Override
 	public List<Weather> getWeather(String parkCode) {
 		List<Weather> parkWeather = new ArrayList();
 		parkCode = parkCode.toUpperCase();
-		String selectAllWeather = "SELECT * FROM weather WHERE parkCode = ?";
+		String selectAllWeather = "SELECT * FROM weather WHERE parkCode = ? AND fiveDayForecastValue > 1";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(selectAllWeather, parkCode);
 		while (results.next()) {
 			Weather weather = new Weather();			
@@ -127,6 +142,7 @@ public class JdbcParkDao implements ParkDao{
 		}
 		return favoriteParks;
 	}
+
 	
 
 }
