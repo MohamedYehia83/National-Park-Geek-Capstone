@@ -50,7 +50,7 @@
 		<form:label for="State Of residence">State Of residence</form:label>
 		<select name="park" id="park">
 			<c:forEach var="park" items="${parks}">
-			<option value="${park.state}"> ${park}</option>
+			<option value="${park.state}"> ${park.state}</option>
 		</c:forEach>
 		</select>
 	</div><br>
