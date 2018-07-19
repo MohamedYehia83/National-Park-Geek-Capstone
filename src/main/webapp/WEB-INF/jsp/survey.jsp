@@ -20,7 +20,7 @@
 <section>
 	
 	
-	<c:url var="newSurveyUrl" value="/newSurvey"/>
+	<c:url var="newSurveyUrl" value="/survey"/>
 	<form method="POST" action="${newSurveyUrl }" modelAttribute="survey">
 		
 		
@@ -28,7 +28,7 @@
 		
 	<div>
 		<form:label for="Favorite National Park">Favorite National Park</form:label>
-		<select name="park" id="park">
+		<select name="parkCode" id="parkCode">
 			<c:forEach var="park" items="${parks}">
 			<option value="${park.parkCode}"> ${park.parkName }</option>
 		</c:forEach>
@@ -41,14 +41,14 @@
 		
 		<form:label path="Your email">Your email</form:label>
 		
-		<input type="text" name="mail"><br>
+		<input type="text" name="emailAddress"><br>
 	
 		
 	</div><br>
 	
 	<div>
 		<form:label for="State Of residence">State Of residence</form:label>
-		<select name="park" id="park">
+		<select name="state" id="state">
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
 			<option value="AZ">Arizona</option>
@@ -105,7 +105,7 @@
 
 	<div>
 		<form:label for="Activity level"> Activity level </form:label>
-		<select name="survey_result" id="survey_result">
+		<select name="activityLevel" id="activityLevel">
 			<option value="Inactive">Inactive</option>
 			<option value="Sedentary">Sedentary</option>
 			<option value="Active">Active</option>
