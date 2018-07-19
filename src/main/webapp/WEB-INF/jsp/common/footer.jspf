@@ -1,4 +1,6 @@
 	<footer>
 <%-- <c:url var="ImgSrc" value="/img/logo.png" />
 		<img src="${ImgSrc}" alt="Geek"> --%>	</footer>
+		</body>
+		
 </html>

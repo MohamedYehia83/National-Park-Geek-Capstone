@@ -24,4 +24,3 @@
 			<c:url var="favorite" value="/favorite" />
 			<a href="${favorite}">Top Rated Parks</a>
 	</nav>
-	<br>

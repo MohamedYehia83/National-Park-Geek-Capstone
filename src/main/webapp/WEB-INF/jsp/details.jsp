@@ -35,26 +35,20 @@
 				<span><c:out value="${park.annualVisitorCount}" /></span> 
 				<span><c:out value="${park.numberOfCampsites} sites" /></span> 
 				<span><c:out value="$ ${park.entryFee}.00" /></span>
-			
 		</div>
 		<div>
 			<c:out value="More about ${park.parkName }:" />
 			<c:out value="${park.parkDescription}" />
 		</div>
 		<div class="weathercontainer">
-			<c:out value = "here"/>
-			<c:forEach var = "day" items="${weather }">
-			<c:out value = "adf"/>
-			<c:out value = "${day.parkCode }"/>
-			<c:out value = "${day.fiveDayForecastValue }"/>
-			<c:out value = "${day.high }"/>
-			<c:out value = "${day.low }"/>
-			<c:out value = "${day.forecast }"/>
+			<c:forEach var = "day" items="${weather}">
+			<c:out value = "Day${day.fiveDayForecastValue }"/>
+			<c:out value = "High: ${day.high }F"/>
+			<c:out value = "Low: ${day.low }F"/>
+			<c:url var="weatherURL" value = "/img/weather/${day.forecast}.png"/>	
+			<img alt="weather" src="${weatherURL}">		
 			</c:forEach>
-			<%-- 	<c:out value="${weather.}" />
-					<c:out value="${weather.}" />
-					<c:out value="${weather.}" />
- --%>
+		
 	</div>
 </body>
 
