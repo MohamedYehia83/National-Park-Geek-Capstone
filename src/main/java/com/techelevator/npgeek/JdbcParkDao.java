@@ -81,11 +81,12 @@ public class JdbcParkDao implements ParkDao{
 	@Override
 	public List<Weather> getWeather(String parkCode) {
 		List<Weather> parkWeather = new ArrayList();
+		parkCode = parkCode.toUpperCase();
 		String selectAllWeather = "SELECT * FROM weather WHERE parkCode = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(selectAllWeather, parkCode);
 		while (results.next()) {
-			Weather weather = new Weather();
-			weather.setParkCode(results.getString("parkcode").toLowerCase());
+			Weather weather = new Weather();			
+			weather.setParkCode(results.getString("parkcode").toUpperCase());
 			weather.setFiveDayForecastValue(results.getInt("fivedayforecastvalue"));
 			weather.setLow(results.getInt("low"));
 			weather.setHigh(results.getInt("high"));

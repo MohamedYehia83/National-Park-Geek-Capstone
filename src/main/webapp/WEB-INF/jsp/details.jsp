@@ -42,7 +42,15 @@
 			<c:out value="${park.parkDescription}" />
 		</div>
 		<div class="weathercontainer">
-		
+			<c:out value = "here"/>
+			<c:forEach var = "day" items="${weather }">
+			<c:out value = "adf"/>
+			<c:out value = "${day.parkCode }"/>
+			<c:out value = "${day.fiveDayForecastValue }"/>
+			<c:out value = "${day.high }"/>
+			<c:out value = "${day.low }"/>
+			<c:out value = "${day.forecast }"/>
+			</c:forEach>
 			<%-- 	<c:out value="${weather.}" />
 					<c:out value="${weather.}" />
 					<c:out value="${weather.}" />
