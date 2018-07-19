@@ -4,27 +4,33 @@
 	width:98%;
 }
 .headercontainer{
-	background-image: url("https://steemitimages.com/0x0/http://www.numaniaticos.com/wp-content/uploads/2014/11/cascada2.gif");
+	background-image: url('../img/waterfall.gif');
 	background-size: 100%;
+	border: 8px groove #804000;
 	border-radius:100px;
-	margin:1rem;
+	margin:.5rem;
 	
-
 }
-nav {
-	border: 5px groove grey;
-	background: lightgrey;
+.linkbar {
+	display:grid;
+	grid-template-rows:1fr;
+	grid-template-columns: 1fr 1fr 1fr   ;
+	border: 8px groove grey;
+	background: #408000;
 	border-radius:25px;
-	width:50%;
+	width:30rem;
+	font: 25px 'Chela One', cursive;
+	margin:auto;
+	padding: 5px;
+	
+}
+.linkbar > a{
+	    color: #804000;
+    cursor: pointer;
+    text-decoration: none;
 	
 }
 
-
-nav > a{
-	font-family: 6px 'Chela One', cursive;
-	margin-left:20px;
- 	
-}
 .detailpageContainer{
 
 }

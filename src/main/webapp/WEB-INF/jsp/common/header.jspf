@@ -16,7 +16,7 @@
 		<img src="${logoImgSrc}" alt="Geek">
 	</header>
 	
-	<nav>
+	<nav class= "linkbar">
 			<c:url var="home" value="/" />
 			<a href="${home}">Home</a>
 			<c:url var="survey" value="/survey" />
