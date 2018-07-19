@@ -17,13 +17,14 @@ public class SurveyController {
 	
 	@RequestMapping(path="/survey", method=RequestMethod.GET)
 	public String SurveryPage(ModelMap modelHolder) {
+		modelHolder.put("parks", surveyDao.getAllParks());
 		List<Survey> survey = surveyDao.getAllSurvey();
 		modelHolder.put("survey", survey);
 		return "survey";
 	}
 	
 	@RequestMapping(path="/survey", method=RequestMethod.POST)
-	public String addSurvey(@RequestParam String parkCode, @RequestParam String emailAddress, @RequestParam String state, @RequestParam String activityLevel) {
+	public String addSurvey(@RequestParam String parkCode, @RequestParam String emailAddress, @RequestParam String state, @RequestParam String activityLevel, ModelMap modelHolder) {
 		Survey surveyToSave = new Survey();
 		surveyToSave.setParkCode(parkCode);
 		surveyToSave.setEmailAddress(emailAddress);
