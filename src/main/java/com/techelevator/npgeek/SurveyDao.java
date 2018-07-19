@@ -7,5 +7,8 @@ public interface SurveyDao {
 	public void saveInput(Survey survey);
 
 	public List<Survey> getAllSurvey();
+	
+	public List<Park> getAllParks();
+
 
 }

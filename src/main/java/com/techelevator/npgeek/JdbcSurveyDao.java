@@ -31,7 +31,10 @@ public class JdbcSurveyDao implements SurveyDao{
 	@Override
 	public List<Survey> getAllSurvey() {
 		List<Survey> parkSurvey = new ArrayList();
-		String selectAllSurvey = "SELECT * FROM survey_result WHERE parkCode = ?";
+		String selectAllSurvey = "SELECT survey_result.* FROM survey_result " + 
+								"JOIN weather ON survey_result.parkCode = weather.parkCode " + 
+								"JOIN park ON weather.parkCode = park.parkCode " +
+								"WHERE survey_result.parkCode = 'ENP' ";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(selectAllSurvey);		
 		while (results.next()) {
 			Survey survey = new Survey();
@@ -44,6 +47,34 @@ public class JdbcSurveyDao implements SurveyDao{
 		
 	}
 		return parkSurvey;
+	}
+	
+	@Override
+	public List<Park> getAllParks() {
+		List<Park> allParks = new ArrayList();
+		String selectAllParks = "SELECT * FROM park";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(selectAllParks);
+		while (results.next()) {
+			Park park = new Park();
+			park.setParkCode(results.getString("parkcode").toLowerCase());
+
+			park.setParkName(results.getString("parkname"));
+			park.setState(results.getString("state"));
+			park.setAcreage(results.getInt("acreage"));
+			park.setElevationInFeet(results.getInt("elevationinfeet"));
+			park.setMilesOfTrail(results.getFloat("milesoftrail"));
+			park.setNumberOfCampsites(results.getInt("numberofcampsites"));
+			park.setClimate(results.getString("climate"));
+			park.setYearFounded(results.getInt("yearfounded"));
+			park.setAnnualVisitorCount(results.getInt("annualvisitorcount"));
+			park.setInspirationalQuote(results.getString("inspirationalquote"));
+			park.setInspirationalQuoteSource(results.getString("inspirationalquotesource"));
+			park.setParkDescription(results.getString("parkdescription"));
+			park.setEntryFee(results.getInt("entryfee"));
+			park.setNumberOfAnimalSpecies(results.getString("numberofanimalspecies"));
+			allParks.add(park);
+		}
+		return allParks;
 	}
 	
 }
