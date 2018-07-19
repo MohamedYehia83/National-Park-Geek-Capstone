@@ -32,9 +32,7 @@
 		
 	<div>
 
-		<form:label path="Favorite National Park">Favorite National Park</form:label>
-		<select name="park" id="park">
-
+		
 		<form:label for="Favorite National Park">Favorite National Park</form:label>
 		<select name="parkCode" id="parkCode">
 			<c:forEach var="park" items="${parks}">
@@ -50,7 +48,6 @@
 		<form:label path="Your email">Your email</form:label>
 		<form:input path="Your email"/>
 		<form:errors path="Your email" cssClass="error"/>
-		<input type="text" name="mail"><br>
 		
 		<input type="text" name="emailAddress"><br>
 	
