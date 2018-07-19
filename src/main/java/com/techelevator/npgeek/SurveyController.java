@@ -17,6 +17,7 @@ public class SurveyController {
 	
 	@RequestMapping(path="/survey", method=RequestMethod.GET)
 	public String SurveryPage(ModelMap modelHolder) {
+		modelHolder.put("parks", surveyDao.getAllParks());
 		List<Survey> survey = surveyDao.getAllSurvey();
 		modelHolder.put("survey", survey);
 		return "survey";
