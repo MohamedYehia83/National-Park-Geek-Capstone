@@ -1,7 +1,11 @@
+<!DOCTYPE html>
+<html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
 <%@include file="common/header.jspf"%>
 	
-	<!DOCTYPE html>
-<html>
+	
 <head>
     <meta charset="UTF-8">
     <title>National Park Geek Survay</title>
@@ -21,12 +25,14 @@
 	
 	
 	<c:url var="newSurveyUrl" value="/survey"/>
-	<form method="POST" action="${newSurveyUrl }" modelAttribute="survey">
+	<form:form method="POST" action="${newSurveyUrl }" modelAttribute="survey">
 		
 		
 	<h2><strong>Fill A Survey</strong></h2>	
 		
 	<div>
+
+		
 		<form:label for="Favorite National Park">Favorite National Park</form:label>
 		<select name="parkCode" id="parkCode">
 			<c:forEach var="park" items="${parks}">
@@ -40,6 +46,8 @@
 		
 		
 		<form:label path="Your email">Your email</form:label>
+		<form:input path="Your email"/>
+		<form:errors path="Your email" cssClass="error"/>
 		
 		<input type="text" name="emailAddress"><br>
 	
@@ -48,6 +56,13 @@
 	
 	<div>
 		<form:label for="State Of residence">State Of residence</form:label>
+		<select name="park" id="park">
+
+	<c:forEach var="park" items="${parks}">
+			<option value="${park.state}"> ${park.state}</option>
+		</c:forEach>
+
+	<option value="AL">Alabama</option>
 		<select name="state" id="state">
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
@@ -117,7 +132,7 @@
 	<div>
 		<input style="color: white; background-color: blue;" type="submit" value="Submit"/>
 	</div>
-	</form>
+	</form:form>
 </section>
 </body>
 
