@@ -10,11 +10,11 @@
 			<c:out value=" - ${park.inspirationalQuoteSource}" />
 		</div>
 	</div>
-		<h2>
+		<div>
 			<c:out value="${park.parkName}" />
 			<span class="foundedYear"><c:out
 					value=" was founded in ${park.yearFounded} in ${park.state}." /></span>
-		</h2>
+		</div>
 
 		<br>
 		<div class="parkInfoContainer">
@@ -45,7 +45,7 @@
 		</div>
 		<div class="weathercontainer">
 		
-			<%-- 				<c:out value="${weather.}" />
+			<%-- 	<c:out value="${weather.}" />
 					<c:out value="${weather.}" />
 					<c:out value="${weather.}" />
  --%>
