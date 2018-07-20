@@ -49,7 +49,7 @@
 		<form:input path="Your email"/>
 		<form:errors path="Your email" cssClass="error"/>
 		
-		<input type="text" name="emailAddress"><br>
+		<input type="email" name="emailAddress" required><br>
 	
 		
 	</div><br>
