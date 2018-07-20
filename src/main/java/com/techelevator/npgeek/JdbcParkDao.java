@@ -85,7 +85,7 @@ public class JdbcParkDao implements ParkDao{
 		while (results.next()) {
 			dayOne.setParkCode(results.getString("parkcode"));
 			dayOne.setFiveDayForecastValue(results.getInt("fiveDayForecastValue"));
-			if (results.getBoolean("farenheit")) {
+			if (results.getString("farenheit").equals("true")) {
 				dayOne.setLow(results.getInt("low"));
 				dayOne.setHigh(results.getInt("high"));
 			}
@@ -110,7 +110,7 @@ public class JdbcParkDao implements ParkDao{
 			Weather weather = new Weather();			
 			weather.setParkCode(results.getString("parkcode").toUpperCase());
 			weather.setFiveDayForecastValue(results.getInt("fivedayforecastvalue"));
-			if(results.getBoolean("farenheit")) {
+			if(results.getString("farenheit").equals("true")) {
 				weather.setLow(results.getInt("low"));
 				weather.setHigh(results.getInt("high"));
 			}
@@ -172,11 +172,11 @@ public class JdbcParkDao implements ParkDao{
 	public void changeFarenheit() {
 		String check = "SELECT farenheit FROM weather LIMIT 1";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(check);
-		boolean farenheit = true;
+		String farenheit = "";
 		while (results.next()) {
-			farenheit = results.getBoolean("farenheit");
+			farenheit = results.getString("farenheit");
 		}
-		if (farenheit) {
+		if (farenheit.equals("true")) {
 			String updateToCelcius = "UPDATE weather SET farenheit = false";
 			jdbcTemplate.update(updateToCelcius);
 		}

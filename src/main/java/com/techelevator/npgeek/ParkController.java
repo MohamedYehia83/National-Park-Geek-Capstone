@@ -34,9 +34,9 @@ public class ParkController {
 	}
 	
 	@RequestMapping(path="/details", method=RequestMethod.POST)
-	public String updateFarenheit() {
+	public String updateFarenheit(String parkCode) {
 		parkDao.changeFarenheit();
-		return "/details";
+		return "redirect:/details?parkCode=" + parkCode;
 	}
 	
 	
