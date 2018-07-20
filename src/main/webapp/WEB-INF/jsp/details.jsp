@@ -90,7 +90,7 @@
 				<c:otherwise>
 					<c:out value = "Day${dayOne.fiveDayForecastValue }"/>
 					<c:out value = "High: ${dayOne.high }C"/>
-							<c:out value = "${dayOne.farenheit}"/>
+						<c:out value = "${dayOne.farenheit}"/>
 					
 					<c:out value = "Low: ${dayOne.low }C"/>
 					<c:url var = "weatherURL" value = "/img/weather/${dayOne.forecast }.png"/>

@@ -10,11 +10,12 @@ package com.techelevator.npgeek;
 	private String farenheit;
  	
 	
+
+	public String getFarenheit() {
+		return farenheit;
+	}
 	public void setFarenheit(String farenheit) {
 		this.farenheit = farenheit;
-	}
- 	public String getFarenheit() {
-		return farenheit;
 	}
 	public String getParkCode() {
  		return parkCode;

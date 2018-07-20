@@ -95,6 +95,7 @@ public class JdbcParkDao implements ParkDao{
 			}
 			
 			dayOne.setForecast(results.getString("forecast"));
+			dayOne.setFarenheit(results.getString("farenheit"));
 		}
 		return dayOne;
 	}
