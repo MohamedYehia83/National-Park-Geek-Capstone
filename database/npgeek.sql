@@ -1,3 +1,18 @@
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('CVNP','space', 'Ohio', 'none');
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('CVNP','space', 'Ohio', 'none');
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('CVNP','space', 'Ohio', 'none');
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('RMNP','space', 'Ohio', 'none');
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('RMNP','space', 'Ohio', 'none');
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('RMNP','space', 'Ohio', 'none');
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('RMNP','space', 'Ohio', 'none');
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('ENP','space', 'Ohio', 'none');
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('ENP','space', 'Ohio', 'none');
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('ENP','space', 'Ohio', 'none');
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('ENP','space', 'Ohio', 'none');
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('ENP','space', 'Ohio', 'none');
+INSERT INTO survey_result(parkCode, emailAddress, state, activityLevel) VALUES ('ENP','space', 'Ohio', 'none');
+
+
 DROP TABLE IF EXISTS survey_result;
 DROP SEQUENCE IF EXISTS seq_surveyId;
 DROP TABLE IF EXISTS weather;
