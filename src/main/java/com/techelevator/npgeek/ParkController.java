@@ -33,6 +33,12 @@ public class ParkController {
 		return "details";
 	}
 	
+	@RequestMapping(path="/details", method=RequestMethod.POST)
+	public String updateFarenheit() {
+		parkDao.changeFarenheit();
+		return "/details";
+	}
+	
 	
 	@RequestMapping(path="/favorite", method=RequestMethod.GET)
 	public String FavoritePage(ModelMap modelHolderF) {

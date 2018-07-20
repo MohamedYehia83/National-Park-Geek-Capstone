@@ -15,5 +15,7 @@ public interface ParkDao {
 	public List<Park> getFavorites();
 
 	public List<Integer> getCounts();
+
+	public void changeFarenheit();
 	
 }
