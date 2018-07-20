@@ -8,7 +8,7 @@
 	
 <head>
     <meta charset="UTF-8">
-    <title>National Park Geek Survay</title>
+    <title>National Park Geek Survey</title>
     <c:url value="/css/style.css" var="cssHref" />
     <link rel="stylesheet" href="${cssHref}">
 </head>
@@ -17,7 +17,7 @@
 	
     <header>
 
-        <h1>National Park Geek Survay</h1>
+        <h1>National Park Geek Survey</h1>
   
     </header>
  
@@ -25,7 +25,7 @@
 	
 	
 	<c:url var="newSurveyUrl" value="/survey"/>
-	<form:form method="POST" action="${newSurveyUrl }" modelAttribute="survey">
+	<form method="POST" action="${newSurveyUrl }" modelAttribute="survey">
 		
 		
 	<h2><strong>Fill A Survey</strong></h2>	
@@ -56,13 +56,6 @@
 	
 	<div>
 		<form:label for="State Of residence">State Of residence</form:label>
-		<select name="park" id="park">
-
-	<c:forEach var="park" items="${parks}">
-			<option value="${park.state}"> ${park.state}</option>
-		</c:forEach>
-
-	<option value="AL">Alabama</option>
 		<select name="state" id="state">
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
@@ -132,7 +125,8 @@
 	<div>
 		<input style="color: white; background-color: blue;" type="submit" value="Submit"/>
 	</div>
-	</form:form>
+	</form>
+	
 </section>
 </body>
 

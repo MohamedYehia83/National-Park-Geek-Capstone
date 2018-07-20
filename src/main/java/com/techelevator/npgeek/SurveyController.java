@@ -29,10 +29,15 @@ public class SurveyController {
 		parkCode = parkCode.toUpperCase();
 		surveyToSave.setParkCode(parkCode);
 		surveyToSave.setEmailAddress(emailAddress);
-		surveyToSave.setState(state);
-		surveyToSave.setActivityLevel(activityLevel);
-		surveyDao.saveInput(surveyToSave);
-		return "redirect:/";
+		if (surveyToSave.getEmailAddress().contains("@") &&
+			surveyToSave.getEmailAddress().contains(".")) {
+			surveyToSave.setState(state);
+			surveyToSave.setActivityLevel(activityLevel);
+			surveyDao.saveInput(surveyToSave);
+			return "redirect:/favorite";
+		}
+		return "redirect:/favorite";
+		
 	}
 	
 }
