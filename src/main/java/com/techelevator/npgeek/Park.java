@@ -19,6 +19,7 @@ public class Park {
 	private String numberOfAnimalSpecies;
 	
 	
+	
 	public String getParkCode() {
 		return parkCode;
 	}

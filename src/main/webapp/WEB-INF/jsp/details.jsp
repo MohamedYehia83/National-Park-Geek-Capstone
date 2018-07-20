@@ -40,6 +40,20 @@
 			<c:out value="More about ${park.parkName }:" />
 			<c:out value="${park.parkDescription}" />
 		</div>
+		
+		
+			
+			<section id="weatherWearContainer">
+					<h4>Recommended Preparation</h4>
+					<c:set var="advice" value="${weather[0].advice}" />
+					<c:forEach items="${advice}"  var="weatherTips">
+						<p>${weatherTips}</p>
+					</c:forEach>
+			</section>
+		
+		
+		
+		
 		<div class="weathercontainer">
 			<c:out value = "Day${dayOne.fiveDayForecastValue }"/>
 			<c:out value = "High: ${dayOne.high }F"/>
@@ -58,6 +72,9 @@
 			</c:forEach>
 		
 	</div>
+	
+				
+	
 </body>
 
 

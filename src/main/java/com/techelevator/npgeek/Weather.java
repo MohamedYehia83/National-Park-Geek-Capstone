@@ -1,5 +1,8 @@
 package com.techelevator.npgeek;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Weather {
 
 	private String parkCode;
@@ -7,7 +10,17 @@ public class Weather {
 	private int low;
 	private int high;
 	private String forecast;
+	private List<String> advice;
+	private int	day;
 	
+	
+	
+	public int getDay() {
+		return day;
+	}
+	public void setDay(int day) {
+		this.day = day;
+	}
 	public String getParkCode() {
 		return parkCode;
 	}
@@ -39,5 +52,47 @@ public class Weather {
 		this.forecast = forecast;
 	}
 	
-	
+public List<String> createAdvice() {
+		
+		List<String> advice = new ArrayList<>();
+		
+		switch(forecast) {
+			case "snow":
+				advice.add("&#9731; Pack snowshoes");
+				break;
+			case "rain":
+				advice.add("&#9730; Pack Rain Gear and waterproof shoes");
+ 				break;
+			case "sunny":
+				advice.add("&#9728; Pack Sunblock to avoid harmful sun rays");
+				break;
+			case "thunderstorms":
+				advice.add("&#9729; Seek shelter and avoid hiking on exposed ridges or mountaintops");
+				break;
+				
+		}
+
+		if (high > 75 ) {
+			advice.add("&#9888; Bring an extra gallon of water");
+		}
+ 
+		if (low < 20) {
+			advice.add("&#9888; Frostbite warning in effect today");			
+		}
+
+		if (high - low > 20) {
+			advice.add("&#9888; Wear breathable layers");						
+		}
+
+		return advice;
+		
+	}
+
+	public List<String> getAdvice() {
+		return advice;
+	}
+	public void setAdvice(List<String> advice) {
+		this.advice = advice;
+	}
+
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 
 <%@include file="common/header.jspf"%>
@@ -33,7 +34,7 @@
 	<div>
 
 		
-		<form:label for="Favorite National Park">Favorite National Park</form:label>
+		<label for="Favorite National Park">Favorite National Park</label>
 		<select name="parkCode" id="parkCode">
 			<c:forEach var="park" items="${parks}">
 			<option value="${park.parkCode}"> ${park.parkName }</option>
@@ -45,9 +46,8 @@
 		<div>
 		
 		
-		<form:label path="Your email">Your email</form:label>
-		<form:input path="Your email"/>
-		<form:errors path="Your email" cssClass="error"/>
+		<label path="Your email">Your email</label>
+		<errors path="Your email" cssClass="error"/>
 		
 		<input type="text" name="emailAddress"><br>
 	
@@ -55,8 +55,8 @@
 	</div><br>
 	
 	<div>
-		<form:label for="State Of residence">State Of residence</form:label>
-		<select name="park" id="park">
+		<label for="State Of residence">State Of residence</label>
+		<select name="state" id="state">
 
 	<c:forEach var="park" items="${parks}">
 			<option value="${park.state}"> ${park.state}</option>
@@ -119,7 +119,7 @@
 	</div><br>
 
 	<div>
-		<form:label for="Activity level"> Activity level </form:label>
+		<label for="Activity level"> Activity level </label>
 		<select name="activityLevel" id="activityLevel">
 			<option value="Inactive">Inactive</option>
 			<option value="Sedentary">Sedentary</option>
