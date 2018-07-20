@@ -1,10 +1,12 @@
 /* CSS Backup
  */
 *{
-padding:0; 
 width:98%;
 }
 
+body{
+	background: tan;
+}
 /* Header Styles */
 .headercontainer{
 background-image: url('../img/waterfall.gif');
@@ -29,17 +31,53 @@ padding: 5px;
    color: #804000;
     cursor: pointer;
     text-decoration: none;}
-{
+
 
 /* Home Page Style */
+#homepage{
+	display: grid;
+	background: #576236;
+	 grid-template-areas:"pic info"
+	 					 ". info";
+	   justify-items: center; 
+	   border: 8px groove grey;
+	   
+}
+
+#homepage > img{
+	grid-area:pic;
+	foo-self: center;
+      max-size: fill;
+}
+#homepage > parkInfo {
+	grid-area:info;
+	padding-bottom: 
+	
+}
  
-.parkContainer{
-
+#parkInfo > a  {
+	font: 20px 'Chela One', cursive;
+	  color: #000;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+	border-style: groove none groove groove;
+	border-color: #0000ff;
+	
 }
-
-
+#parkInfo > .parkState{
+		font: 20px 'Chela One', cursive;
+		border-style: groove groove groove none;
+		border-color: #0000ff;	
+		
 }
-
+#parkInfo >.parkDesc{
+	display: block;
+	text-indent: 20%;
+	font: 15px  'Open Sans', sans-serif;
+	margin: auto;
+	padding-top: 2%;
+}
 
 /* Detail Page Style */
 .detailpageContainer{

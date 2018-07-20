@@ -7,6 +7,7 @@
 	</title>
 	<link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Chela+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<c:url var="stylesheetHref" value="/css/style.css" />
 	<link rel="stylesheet" href="${stylesheetHref}">
 </head>
@@ -24,3 +25,5 @@
 			<c:url var="favorite" value="/favorite" />
 			<a href="${favorite}">Top Rated Parks</a>
 	</nav>
+<br>
+	
