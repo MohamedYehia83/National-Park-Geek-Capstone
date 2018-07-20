@@ -20,7 +20,7 @@ display:grid;
 grid-template-rows:1fr;
 grid-template-columns: 1fr 1fr 1fr   ;
 border: 8px groove grey;
-background: #408000;
+background: #576236;
 border-radius:25px;
 width:30rem;
 font: 25px 'Chela One', cursive;
@@ -28,7 +28,7 @@ margin:auto;
 padding: 5px;
 }
 .linkbar > a{
-   color: #804000;
+   color: #000;
     cursor: pointer;
     text-decoration: none;}
 
@@ -81,7 +81,7 @@ padding: 5px;
 #parkInfo >.parkDesc{
 	display: block;
 	text-indent: 10%;
-	font: 15px  'Open Sans', sans-serif;
+	font: 14px  'Open Sans', sans-serif;
 	margin: auto;
 	padding-top: 2%;
 		padding-bottom: 2%;
@@ -140,45 +140,34 @@ background: linear-gradient(to right, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 37
 .favoriteTitle {
 	display: flex;
 	justify-content: center;
-	margin: 10px;
 	padding: 10px;
-	font-size: 60px;
-	color: red;
-	border: 2px solid black;
+	font: 40px 'Chela One', cursive;
+	color: #000;
+	border: 8px groove #57564e;
 	border-radius: 20px;
-	width: 750px;
+	width: 70%;
+	background-color:#576236;
 }
-.favoriteContainer {
-	display: flex;	
+#favoriteContainer {
+	display: grid;	
+	grid-template-areas: "park votes";
+	background-color:#576236;
+	border-radius: 20px;
+	border: 8px groove #57564e;
+	margin-top:2%;}
+
+#favoriteContainer > #favParks{
+grid-area:park;
+	display: grid;	
+
 }
-.favParks {
-	display: flex;
-	flex-direction: column;
-}
-.favoritePark {
-	display: flex;
-}
-.favParkImg {
-	margin: 10px;
-	margin-bottom: 30px;
-	display: flex;
-	width: 40%;
-	height: 200px;
-}
-.favParkName {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	font-size: 40px;
-}
-.voteCounts {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	width: 250px;
-}
-.parkVote {
-	font-size: 40px;
+
+#favoriteContainer > #voteCounts{
+grid-area:votes;
+	display: grid;	
+	grid-row-template: auto-fit;
+
+	
 }
 
 
