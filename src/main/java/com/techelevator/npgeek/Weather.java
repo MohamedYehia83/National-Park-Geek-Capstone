@@ -10,6 +10,7 @@ public class Weather {
 	private int low;
 	private int high;
 	private String forecast;
+<<<<<<< HEAD
 	private List<String> advice;
 	private int	day;
 	
@@ -20,6 +21,15 @@ public class Weather {
 	}
 	public void setDay(int day) {
 		this.day = day;
+=======
+	private boolean farenheit;
+	
+	public boolean isFarenheit() {
+		return farenheit;
+	}
+	public void setFarenheit(boolean farenheit) {
+		this.farenheit = farenheit;
+>>>>>>> 67738f29d71f0f8cba3eb93524805af48d305be1
 	}
 	public String getParkCode() {
 		return parkCode;

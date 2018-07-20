@@ -85,8 +85,15 @@ public class JdbcParkDao implements ParkDao{
 		while (results.next()) {
 			dayOne.setParkCode(results.getString("parkcode"));
 			dayOne.setFiveDayForecastValue(results.getInt("fiveDayForecastValue"));
-			dayOne.setLow(results.getInt("low"));
-			dayOne.setHigh(results.getInt("high"));
+			if (results.getBoolean("farenheit")) {
+				dayOne.setLow(results.getInt("low"));
+				dayOne.setHigh(results.getInt("high"));
+			}
+			else {
+				dayOne.setLow(convertToCelcius(results.getInt("low")));
+				dayOne.setHigh(convertToCelcius(results.getInt("high")));
+			}
+			
 			dayOne.setForecast(results.getString("forecast"));
 		}
 		return dayOne;
@@ -103,8 +110,14 @@ public class JdbcParkDao implements ParkDao{
 			Weather weather = new Weather();			
 			weather.setParkCode(results.getString("parkcode").toUpperCase());
 			weather.setFiveDayForecastValue(results.getInt("fivedayforecastvalue"));
-			weather.setLow(results.getInt("low"));
-			weather.setHigh(results.getInt("high"));
+			if(results.getBoolean("farenheit")) {
+				weather.setLow(results.getInt("low"));
+				weather.setHigh(results.getInt("high"));
+			}
+			else {
+				weather.setLow(convertToCelcius(results.getInt("low")));
+				weather.setHigh(convertToCelcius(results.getInt("high")));
+			}
 			weather.setForecast(results.getString("forecast"));
 			parkWeather.add(weather);
 		}
@@ -153,6 +166,31 @@ public class JdbcParkDao implements ParkDao{
 			voteCounts.add(holder);
 		}
 		return voteCounts;
+	}
+
+	@Override
+	public void changeFarenheit() {
+		String check = "SELECT farenheit FROM weather LIMIT 1";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(check);
+		boolean farenheit = true;
+		while (results.next()) {
+			farenheit = results.getBoolean("farenheit");
+		}
+		if (farenheit) {
+			String updateToCelcius = "UPDATE weather SET farenheit = false";
+			jdbcTemplate.update(updateToCelcius);
+		}
+		else {
+			String updateToFarenheit = "UPDATE weather SET farenheit = true";
+			jdbcTemplate.update(updateToFarenheit);
+		}
+	}
+	
+	public int convertToCelcius(int degrees) {
+		degrees = degrees - 32;
+		degrees = degrees * 5;
+		degrees = degrees / 9;
+		return degrees;
 	}
 
 	
