@@ -7,7 +7,14 @@ public class Weather {
 	private int low;
 	private int high;
 	private String forecast;
+	private boolean farenheit;
 	
+	public boolean isFarenheit() {
+		return farenheit;
+	}
+	public void setFarenheit(boolean farenheit) {
+		this.farenheit = farenheit;
+	}
 	public String getParkCode() {
 		return parkCode;
 	}
