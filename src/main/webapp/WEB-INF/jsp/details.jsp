@@ -48,13 +48,10 @@
 		
 		
 		<div class="weathercontainer">
-		<c:out value = "${dayOne.farenheit}"/>
 			<c:choose>
 				<c:when test = "${dayOne.farenheit == 'true' }">
 					<c:out value = "Day${dayOne.fiveDayForecastValue }"/>
-					<c:out value = "High: ${dayOne.high }F"/>
-							<c:out value = "${dayOne.farenheit}"/>
-					
+					<c:out value = "High: ${dayOne.high }F"/>					
 					<c:out value = "Low: ${dayOne.low }F"/>
 					<c:url var = "weatherURL" value = "/img/weather/${dayOne.forecast }.png"/>
 					<img src="${weatherURL }"/>
@@ -89,9 +86,7 @@
 				</c:when>
 				<c:otherwise>
 					<c:out value = "Day${dayOne.fiveDayForecastValue }"/>
-					<c:out value = "High: ${dayOne.high }C"/>
-						<c:out value = "${dayOne.farenheit}"/>
-					
+					<c:out value = "High: ${dayOne.high }C"/>					
 					<c:out value = "Low: ${dayOne.low }C"/>
 					<c:url var = "weatherURL" value = "/img/weather/${dayOne.forecast }.png"/>
 					<img src="${weatherURL }"/>
@@ -135,8 +130,16 @@
 			
 			<c:forEach var = "day" items="${weather}">
 			<c:out value = "Day${day.fiveDayForecastValue }"/>
-			<c:out value = "High: ${day.high }F"/>
-			<c:out value = "Low: ${day.low }F"/>
+			<c:choose>
+				<c:when test="${day.farenheit == 'true' }">
+					<c:out value = "High: ${day.high }F"/>
+					<c:out value = "Low: ${day.low }F"/>
+				</c:when>
+				<c:otherwise>
+					<c:out value = "High: ${day.high }C"/>
+					<c:out value = "Low: ${day.low }C"/>
+				</c:otherwise>
+			</c:choose>
 			<c:url var="weatherURL" value = "/img/weather/${day.forecast}.png"/>	
 			<img alt="weather" src="${weatherURL}">		
 			</c:forEach>

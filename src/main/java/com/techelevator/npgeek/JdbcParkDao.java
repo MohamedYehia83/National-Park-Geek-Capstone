@@ -120,6 +120,7 @@ public class JdbcParkDao implements ParkDao{
 				weather.setHigh(convertToCelcius(results.getInt("high")));
 			}
 			weather.setForecast(results.getString("forecast"));
+			weather.setFarenheit(results.getString("farenheit"));
 			parkWeather.add(weather);
 		}
 		return parkWeather;
