@@ -41,42 +41,51 @@ padding: 5px;
 	 					 ". info";
 	   justify-items: center; 
 	   border: 8px groove grey;
+	   padding:1% 3% 0% 0%;
 	   
 }
 
 #homepage > img{
-	grid-area:pic;
+	grid-area: pic;
 	foo-self: center;
       max-size: fill;
 }
 #homepage > parkInfo {
 	grid-area:info;
-	padding-bottom: 
 	
 }
  
 #parkInfo > a  {
-	font: 20px 'Chela One', cursive;
+	font: 25px 'Chela One', cursive;
 	  color: #000;
     cursor: pointer;
     text-decoration: none;
-    text-align: center;
+    background-color:#57564e;
 	border-style: groove none groove groove;
-	border-color: #0000ff;
+	border-color: #57564e;
+	padding-left: 1%;
+	display:inline;
+	
 	
 }
 #parkInfo > .parkState{
-		font: 20px 'Chela One', cursive;
+		font: 25px 'Chela One', cursive;
 		border-style: groove groove groove none;
-		border-color: #0000ff;	
-		
+		border-color: #57564e;	
+	    background-color:#57564e;
+	padding-right: 1%;
+
 }
+
+
 #parkInfo >.parkDesc{
 	display: block;
-	text-indent: 20%;
+	text-indent: 10%;
 	font: 15px  'Open Sans', sans-serif;
 	margin: auto;
 	padding-top: 2%;
+		padding-bottom: 2%;
+	
 }
 
 /* Detail Page Style */
